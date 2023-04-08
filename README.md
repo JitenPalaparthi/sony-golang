@@ -27,11 +27,11 @@ GOROOT is used to compile user defined and thirdparty packages
 
 ## Keywords
 
-package,func
+package,func,import
 
 ## builtin
 
-println
+println,print, complex
 
 
 ## go tools
@@ -51,3 +51,27 @@ println
     - to create a module
 
         ```go mod init <name of the module>```
+
+## cross compile go appliations
+
+    ### get the list of arch and os that go supports
+
+        ```go tool dist list```
+
+ ```GOOS=windows && GOARCH=amd64 go build -o app.exe hello.go```
+
+ ## stripe off the binary while building
+
+ ```go build -ldflags="-s -w" -o app hello.go```
+
+ ## use tool compile
+
+ ```go tool compile hello.go```
+
+ ## use tool link
+
+ ```go tool link -v -o hello hello.o```
+
+## go install
+
+```go install github.com/cweill/gotests/gotests@v1.6.0```
