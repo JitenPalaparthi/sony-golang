@@ -27,7 +27,8 @@ GOROOT is used to compile user defined and thirdparty packages
 
 ## Keywords
 
-package,func,import,var,if ,else,return,switch,case,default,fallthrough
+
+break, case, continue, const, default, else,fallthrough, for , func, goto, if, import, package,return,switch,var 
 
 ## builtin
 

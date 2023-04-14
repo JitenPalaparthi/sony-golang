@@ -31,15 +31,15 @@ func main() {
 		fmt.Print(i, " ")
 	}
 
-	// fmt.Println("\nusing more than one inits")
+	fmt.Println("\nusing more than one inits")
 
-	// for i, j := 3, 5; i != j; i, j = i*4, j*3 {
-	// 	if i >= 1000 {
-	// 		break
-	// 	}
-	// 	fmt.Print("i:", i, "j:", j)
+	for i, j := 3, 5; i != j; i, j = i*4, j*3 {
+		if i >= 1000 {
+			break
+		}
+		fmt.Print("i:", i, "j:", j)
 
-	// }
+	}
 
 	fmt.Println("\nnested loop")
 
