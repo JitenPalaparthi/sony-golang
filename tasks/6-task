@@ -1,0 +1,10 @@
+employee grade (a,b,c,d)
+
+salary -> < 10000 he belongs to grade d
+
+salary >10k <15k  c
+
+more than 15k and less then 25k b
+
+more than 25k grade a
+
