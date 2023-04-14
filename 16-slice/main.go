@@ -56,6 +56,10 @@ func main() {
 	fmt.Println("address of slice9", &slice9[0])
 	fmt.Println("address of slice10", &slice10[0])
 
+	slice11 := make([]int, len(slice5))
+	copy(slice11, slice5) // deep copy
+	fmt.Println(slice11)
+
 }
 
 // package main

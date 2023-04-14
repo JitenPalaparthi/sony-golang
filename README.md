@@ -32,7 +32,7 @@ break, case, continue, const, default, else,fallthrough, for , func, goto, if, i
 
 ## builtin
 
-cap,complex,len,println,print
+append,cap,complex,copy,len,make,println,print
 
 
 ## go tools
