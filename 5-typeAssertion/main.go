@@ -40,4 +40,7 @@ func main() {
 	// var num8 float32
 	// num8, ok := iface1.(int)
 	// fmt.Println(num8, ok)
+
+	// var i1 int = 10 // 4 or 8 bytes of memory
+	// var i2 any = 10 //
 }
