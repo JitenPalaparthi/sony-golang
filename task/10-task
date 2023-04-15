@@ -1,0 +1,8 @@
+// task
+
+//cal(a,b any, func(any,any)float64)(float64,error)
+
+// if a and b are int , for addition it should be a+b return type if float64,nil
+// if a and b are float32 , for addition it should be a+b return type if float64,nil
+// if a and b are uint8-uint64 and int8-int64 or float32 or float64 it should return a+b -> float64 ,nil
+// if a or b are other than uint8-uint64 and int8-int64 or float32 or float64 return a+b -> 0, invalid type provided
