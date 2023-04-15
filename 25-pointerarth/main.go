@@ -21,3 +21,13 @@ func main() {
 }
 
 // if a and b are uint8-uint64 and int8-int64 or float32 or float64 it should return a+b -> float64 ,nil
+
+// creat an array inside a func
+// return pointer of that array
+// using pointer arthemetic you should print all elements of that array by calling that func
+
+func GetArr(l int) *int {
+	arr := make([]int, l)
+	// fill array
+	return &arr[0]
+}
