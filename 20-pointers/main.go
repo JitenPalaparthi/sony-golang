@@ -44,14 +44,14 @@ func main() {
 	// Memory leaks
 
 	//n1 := Square(100)
-	for i := 1; i <= 10000000; i++ {
-		ptr3 := Squareptr(100)
-		fmt.Println("Address out side of function", ptr3)
-	}
+	// for i := 1; i <= 10000000; i++ {
+	// 	ptr3 := Squareptr(100)
+	// 	fmt.Println("Address out side of function", ptr3)
+	// }
 
-	// var ptr6 *func()
+	var ptr6 *func() = &Greet
 
-	// fmt.Println(ptr6)
+	(*ptr6)()
 
 }
 
