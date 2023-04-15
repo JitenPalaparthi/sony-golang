@@ -42,7 +42,7 @@ func main() {
 
 	fmt.Println("Sub", sub)
 
-	mul := Cal(10, 30, func(i1, i2 int) int {
+	mul := Cal(10, 30, func(i1, i2 int) int { // function pointer as the last parameter is a function and passed as an argument
 		return i1 * i2
 	})
 
@@ -55,7 +55,7 @@ func main() {
 		return a + b
 	}
 
-	var ptr *func(int, int) int = &add1
+	var ptr *func(int, int) int = &add1 // pointers as functions
 	a4 := (*ptr)(10, 20)
 
 	fmt.Println(a4)
@@ -81,14 +81,11 @@ func sort(arr []int, f func([]int) []int) []int {
 	return f(arr)
 }
 
-// func main() {
-// 	      var pfunc func()
-// 		   pfunc = Greet
-// 		   pfunc()
-// 		    var pfunc2 func(string)
-// 			  pfunc2 = Greet2
-// 			   pfunc2("LNR")  }
-// 			    func Greet() {
-// 					fmt.Println("Greet")  }
-// 					 func Greet2(name string) {
-// 						     fmt.Println(
+// task
+
+//cal(a,b any, func(any,any)float64)(float64,error)
+
+// if a and b are int , for addition it should be a+b return type if float64,nil
+// if a and b are float32 , for addition it should be a+b return type if float64,nil
+// if a and b are uint8-uint64 and int8-int64 or float32 or float64 it should return a+b -> float64 ,nil
+// if a or b are other than uint8-uint64 and int8-int64 or float32 or float64 return a+b -> 0, invalid type provided
