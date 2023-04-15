@@ -1,0 +1,13 @@
+create a package something like cal
+
+add atleast 4 functions to it
+
+puch the package to the github or gitlab repo
+
+create a saperate application to consume that package.(Should your remote package.)
+
+
+go mod init <name>
+
+go mod tidy // to pull pacakges
+
