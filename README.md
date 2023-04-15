@@ -28,11 +28,11 @@ GOROOT is used to compile user defined and thirdparty packages
 ## Keywords
 
 
-break, case, continue, const, default, else,fallthrough, for , func, goto, if, import, package,return,switch,var 
+break, case, continue, const, default, else,fallthrough, for , func, goto, if, import, map,package,range,return,switch,var 
 
 ## builtin
 
-append,cap,complex,copy,len,make,println,print
+append,cap,complex,copy,delete,len,make,println,print
 
 
 ## go tools

@@ -1,0 +1,5 @@
+- Write functions (Add,Update,Delete and GET) from a map. Delete should return error if there is no key to delete
+
+- Delete(map,key)(ok,error)
+- Write a function to fetch all keys from a map
+- Write a function to fetch all values from a map
