@@ -1,5 +1,5 @@
 - Create a calc
-- attach methods like add, sub, mul, div
+- attach methods like Add, Sub, Mul, Div
 
 - Make sure that these can pass variadic arguments
 
