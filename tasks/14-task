@@ -1,0 +1,9 @@
+- create a type called sliceInt []int
+
+- Add methods like Max,Min 
+
+- create a normal slice varialbe , instantiate it give values and call methods from sliceInt
+
+- one variable is frm sliceInt, consume methods
+
+- one variable is normal slice ([int]) and consume methods of sliceInt
