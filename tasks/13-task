@@ -1,0 +1,8 @@
+- Create a calc
+- attach methods like add, sub, mul, div
+
+- Make sure that these can pass variadic arguments
+
+- all should be methods
+
+- Calc must be a type 
