@@ -1,0 +1,12 @@
+keep a file with some text
+
+open a  new file and split all words as new lines into a new file
+
+
+use close both the files using defer
+
+if the input file is not available then panic the execution
+
+if output file is also not available panic it.
+
+

@@ -33,7 +33,6 @@ func StoreFullname(fn, ln *string) error {
 	if fn == nil || *fn == "" {
 		panic("Firstname cannot be nil or empty")
 		//log.Fatal("Firstname cannot be nil or empty")
-
 	}
 
 	if ln == nil || *ln == "" {
