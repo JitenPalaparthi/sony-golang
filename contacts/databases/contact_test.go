@@ -87,3 +87,9 @@ func TearDown() error {
 
 // https://github.com/axw/gocov
 // https://github.com/matm/gocov-html
+
+// https://github.com/matm/gocov-html
+
+// alias testcases="sed -n 's/func.*\(Test.*\)(.*/\1/p' | xargs | sed 's/ /|/g'"
+
+// go test -v -run $(cat coordinator_test.go | testcases)
