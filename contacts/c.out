@@ -1,0 +1,16 @@
+mode: set
+contacts/models/contact.go:16.36,17.18 1 1
+contacts/models/contact.go:17.18,21.3 1 0
+contacts/models/contact.go:22.2,22.19 1 1
+contacts/models/contact.go:22.19,26.3 1 1
+contacts/models/contact.go:29.2,29.12 1 1
+contacts/models/contact.go:32.44,34.16 2 1
+contacts/models/contact.go:34.16,36.3 1 0
+contacts/models/contact.go:38.2,38.27 1 1
+contacts/databases/connection.go:8.50,11.2 1 0
+contacts/databases/contact.go:18.57,21.21 3 0
+contacts/databases/contact.go:21.21,23.3 1 0
+contacts/databases/contact.go:24.2,24.12 1 0
+contacts/databases/contact.go:27.73,30.21 3 0
+contacts/databases/contact.go:30.21,32.3 1 0
+contacts/databases/contact.go:33.2,33.21 1 0
