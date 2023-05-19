@@ -2,19 +2,28 @@ package main
 
 import (
 	database "contacts/databases"
-	"contacts/models"
-	"fmt"
+	"contacts/handlers"
+	"flag"
 	"log"
-	"time"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 var (
-	dsn string
+	dsn  string
+	port string
 )
 
 func main() {
 
-	dsn := "host=localhost user=postgres password=postgres dbname=contactsdb port=5432 sslmode=disable TimeZone=Asia/Shanghai"
+	flag.StringVar(&dsn, "dsn", "host=localhost user=postgres password=postgres dbname=contactsdb port=5432 sslmode=disable TimeZone=Asia/Shanghai", "--dsn=host=localhost user=postgres password=postgres dbname=contactsdb port=5432 sslmode=disable TimeZone=Asia/Shanghai")
+	flag.StringVar(&port, "port", "8080", "--port=8080 or -port=8080")
+	flag.Parse()
+
+	router := gin.Default()
+
+	//dsn := "host=localhost user=postgres password=postgres dbname=contactsdb port=5432 sslmode=disable TimeZone=Asia/Shanghai"
 
 	db, err := database.GetConnection(dsn)
 	if err != nil {
@@ -22,22 +31,27 @@ func main() {
 	}
 
 	contactdb := database.Contact{DB: db}
-	contact := new(models.Contact)
-	contact.Name = "Jiten"
-	contact.Email = "Jitenp@outlook.Com"
-	contact.Status = "Active"
-	contact.Lastmodified = int64(time.Now().Unix())
 
-	err = contactdb.Create(contact)
-	if err != nil {
-		log.Println(err)
+	//http.ListenAndServe(":"+port, nil)
+
+	router.GET("/ping", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, map[string]string{"message": "pong"})
+	})
+
+	router.GET("/health", func(ctx *gin.Context) {
+		ctx.String(http.StatusOK, "ok")
+	})
+
+	chandler := new(handlers.Contact)
+	chandler.IContact = &contactdb
+
+	router.POST("/v1/private/contact", chandler.Create)
+
+	router.POST("/v1/private/contact/ms", chandler.CreateUseMessageBroker)
+
+	router.GET("v1/private/contact/:id", chandler.GetByID())
+
+	if err := router.Run(":" + port); err != nil {
+		log.Fatal(err)
 	}
-
-	c1, err := contactdb.Get("1")
-	if err != nil {
-		log.Println(err)
-	}
-
-	fmt.Println(c1)
-
 }

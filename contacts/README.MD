@@ -32,3 +32,12 @@
 https://github.com/matm/gocov-html
 
 
+
+### to run postgres
+
+```docker run -d --name pg  -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=contactsdb postgres```
+### to run nats
+
+```docker run --name nats -d  -p 4222:4222 -p 8222:8222 nats --http_port 8222```
+
+

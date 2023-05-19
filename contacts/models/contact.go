@@ -9,8 +9,9 @@ type Contact struct {
 	ID           int    `json:"id"`
 	Name         string `json:"name"`
 	Email        string `json:"email"`
-	Status       string `json:"status"`
-	Lastmodified int64  `json:"lastmodified"`
+	Address      string `json:"address"`
+	Status       string `json:"status" gorm:"default:active"`
+	LastModified int64  `json:"lastModified" gorm:"autoCreateTime;column:lastModified"` //last_modified
 }
 
 func (c *Contact) Validate() error {

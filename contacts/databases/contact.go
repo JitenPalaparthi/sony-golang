@@ -2,6 +2,7 @@ package database
 
 import (
 	"contacts/models"
+	"fmt"
 
 	"gorm.io/gorm"
 )
@@ -11,20 +12,20 @@ type Contact struct {
 }
 
 type IContact interface {
-	Create(contact *models.Contact) error
+	Create(contact *models.Contact) (*models.Contact, error)
 	Get(id string) (contact *models.Contact, error error)
 }
 
-func (c *Contact) Create(contact *models.Contact) error {
+func (c *Contact) Create(contact *models.Contact) (*models.Contact, error) {
 	c.DB.AutoMigrate(&models.Contact{})
 	tx := c.DB.Create(contact)
 	if tx.Error != nil {
-		return tx.Error
+		return nil, tx.Error
 	}
-	return nil
+	return c.Get(fmt.Sprint(contact.ID))
 }
 
-func (c *Contact) Get(id string) (contact *models.Contact, error error) {
+func (c *Contact) Get(id string) (contact *models.Contact, errerroror error) {
 	contact = new(models.Contact)
 	tx := c.DB.First(&contact, id)
 	if tx.Error != nil {
